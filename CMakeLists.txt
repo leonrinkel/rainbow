@@ -28,3 +28,10 @@ verilate(
 	SOURCES hdl/divider_tb.v hdl/divider.v
 	VERILATOR_ARGS --trace --timing
 )
+
+add_executable(pixel_tb sim/pixel_tb.cpp)
+verilate(
+	pixel_tb
+	SOURCES hdl/pixel_tb.v hdl/pixel.v
+	VERILATOR_ARGS --trace --timing
+)
