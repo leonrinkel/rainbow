@@ -22,6 +22,13 @@ verilate(
 	VERILATOR_ARGS --trace --timing
 )
 
+add_executable(display_tb sim/display_tb.cpp)
+verilate(
+	display_tb
+	SOURCES hdl/display_tb.v hdl/display.v
+	VERILATOR_ARGS --trace --timing
+)
+
 add_executable(divider_tb sim/divider_tb.cpp)
 verilate(
 	divider_tb
@@ -33,5 +40,12 @@ add_executable(pixel_tb sim/pixel_tb.cpp)
 verilate(
 	pixel_tb
 	SOURCES hdl/pixel_tb.v hdl/pixel.v
+	VERILATOR_ARGS --trace --timing
+)
+
+add_executable(segment_tb sim/segment_tb.cpp)
+verilate(
+	segment_tb
+	SOURCES hdl/segment_tb.v hdl/segment.v
 	VERILATOR_ARGS --trace --timing
 )
